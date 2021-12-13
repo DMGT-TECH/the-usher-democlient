@@ -1,0 +1,183 @@
+/* CSS files add styling rules to your content */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Helvetica Neue", Sans-serif;
+  color: #222;
+  padding: 1rem 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1000px;
+}
+@media (max-width: smallViewport) {
+  body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+header {
+  margin-top: 1rem;
+  position: relative;
+}
+header .logo {
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 70px;
+}
+h1,
+h2 {
+  font-weight: bold;
+  text-align: left;
+}
+h1 {
+  font-size: 28px;
+}
+h2 {
+  font-size: 23px;
+}
+h3,
+h4 {
+  font-size: 16px;
+  display: inline-block;
+  margin: 12px;
+}
+h5 {
+  display: inline-block;
+  padding: 3px;
+  padding-bottom: 0px;
+  padding-top: 2px;
+  margin: 0px;
+  margin-top: 3px;
+  border-radius: 3px;
+  background-color: #daa9ff;
+  position: relative;
+  top: -2px;
+  color: #000;
+  font-weight: bold;
+  font-size: 70%;
+}
+p {
+  line-height: 20px;
+}
+a {
+  color: #222;
+  text-decoration: none;
+}
+main,
+section {
+  clear: both;
+}
+section,
+article {
+  margin-top: 1rem;
+}
+section {
+  margin-top: 3rem;
+}
+section h2,
+section h3 {
+  display: inline-block;
+  -webkit-transform: rotate(-1deg);
+  transform: rotate(-1deg);
+  z-index: 0;
+  background-color: lavender;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+section h2 span,
+section h3 span {
+  display: inline-block;
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
+}
+section .nobg {
+  background-color: transparent !important;
+}
+section ul li a {
+  color: #00f;
+}
+section h1,
+section h2.introheader {
+  padding: 0px;
+}
+section h1 span,
+section h2.introheader span {
+  display: inline-block;
+  z-index: 0;
+  padding: 2px 2px;
+  border-radius: 8px;
+  margin: 0 5px;
+}
+section h1 span span.highlight,
+section h2.introheader span span.highlight {
+  -webkit-transform: rotate(-1deg);
+  transform: rotate(-1deg);
+  padding: 2px 4px;
+}
+section h1 span span.highlight span,
+section h2.introheader span span.highlight span {
+  display: inline-block;
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
+}
+.button,
+button {
+  font-family: "Benton Sans", "Helvetica Neue", Sans-serif;
+  text-align: left;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  background-color: #fff;
+  border: solid #222 2px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.button:hover,
+button:hover {
+  background-color: #eaeaea;
+  text-decoration: none;
+}
+.button:active,
+button:active,
+.button.active,
+button.active {
+  background-color: #e8e8e8;
+  color: #222;
+}
+input {
+  padding: 1em;
+  background: #efefef;
+  font-size: 1em;
+}
+section .glitch-remix {
+  position: relative;
+  top: 10px;
+  left: 5px;
+}
+input[type="text"],
+#copy-script {
+  display: block;
+  margin: 1em;
+  max-width: 600px;
+  padding: 0.5em;
+  font-size: 1em;
+  background: #efefef;
+}
+.glitchButton {
+  z-index: 1;
+}
+.glitchButton.inline {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  margin-right: 20px;
+}
+a {
+  color: cornflowerblue;
+}

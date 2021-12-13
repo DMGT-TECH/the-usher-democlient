@@ -1,0 +1,127 @@
+https://my-theusher-client.glitch.me/?code=eoCg73mPrP7LOsLt&state=aG1jdHFpTEFDOUJ1dmw5QVZ3X0JSQXhHdjNJckhtbkZ3WFZUWllxbFZyYQ%3D%3D<html lang="en">
+  <head>
+    <title>TheUsher Test Client App</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <script>
+      // Authentication service (Auth0) configuration
+      const AUTH0_DOMAIN = "dmgt-test.auth0.com";  // replace with your Auth0 tenant domain
+      const AUTH0_CLIENT_ID = "nPoIVTfaaXJwqLqWVYG6AFRikXWCqeMX"; // replace with your client ID
+      const AUTH0_REDIRECT_URI = "https://my-theusher-client.glitch.me/"; // replace with the URI to this hosted app
+
+      // Authorization service (TheUsher) configuration
+      const THEUSHER_URL =
+        "https://o07e9wdidk.execute-api.us-east-1.amazonaws.com/prod";
+      const THEUSHER_CLIENT_ID = "test-client1"
+
+      // Backend Resources to Use
+      const BACKEND_RESOURCE_BASEURL =
+        "https://my-theusher-resourceserver.glitch.me/"; // replace with the URI to the hosted resource server
+
+
+      // Internal client app configuration
+      const IDP_TOKEN_COOKIE_NAME = "idp_token";
+      const THEUSHER_TOKEN_COOKIE_NAME = "theusher_token";
+      const IMG_BLANK_PIXEL =
+        "https://cdn.glitch.com/a86b7d50-d4dd-4637-a680-cbba8665a07d%2F1x1.png?v=1585262144161";
+      const IMG_WAITING =
+        "https://cdn.glitch.com/a86b7d50-d4dd-4637-a680-cbba8665a07d%2Fwaiting.gif?v=1585261956156";
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
+
+    <script src="/jwt-decode.min.js"></script>
+    <script src="/authn-auth0.js"></script>
+    <script src="/authz-theusher.js"></script>
+    <script src="/backend-layer.js"></script>
+  </head>
+
+  <body>
+    <section>
+      <h1>Example Client App using The Usher</h1>
+      <p>
+        This is a simple client application that can get authorization from
+        TheUsher to perform computations on a backend resource.
+      </p>
+      <p>
+        If you want to be able to <b>add numbers together</b>, the backend
+        resource requires you have scope <tt>test-permission1</tt>.
+        <br />
+        If you want to be able to <b>divide two numbers by each other</b>, the
+        backend resource requires you have scope <tt>test-permission9</tt> ;)
+      </p>
+
+      <div
+        class="glitchButton"
+        style="position:fixed;top:20px;right:20px;"
+      ></div>
+      <script src="https://button.glitch.me/button.js"></script>
+      <button onclick="javascript:theusherDeauthorize();idpLogout();">
+        Log out
+      </button>
+    </section>
+    <section>
+      <h2>Perform computations using the backend resource</h2>
+      <br />
+      <p>
+        <i>(Only works after you've gotten authorized by TheUsher)</i>
+      </p>
+
+      <hr />
+      <div id="messages"></div>
+      <hr />
+
+      <button onclick="javascript:getTheUsherToken();">
+        Get Authorization from TheUsher
+      </button>
+
+      <form>
+        <table border="0">
+          <tr valign="center">
+            <td valign="center"><input type="text" size="10" id="left" /></td>
+            <td>•</td>
+            <td><input type="text" size="10" id="right" /></td>
+            <td>=</td>
+            <td><input type="text" size="10" id="result" /></td>
+            <td>
+              <img
+                width="50px"
+                src="https://cdn.glitch.com/a86b7d50-d4dd-4637-a680-cbba8665a07d%2F1x1.png?v=1585262144161"
+                id="waitingIconImage"
+              />
+            </td>
+          </tr>
+          <tr valign="center">
+            <td align="center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td align="center">
+              <button
+                type="button"
+                onclick="javascript:runSubtractBackendResource()"
+              >
+                Subtract
+              </button>
+              <button
+                type="button"
+                onclick="javascript:runAddBackendResource()"
+              >
+                Add
+              </button>
+              <button
+                type="button"
+                onclick="javascript:runDivideBackendResource()"
+              >
+                Divide
+              </button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </section>
+  </body>
+</html>
