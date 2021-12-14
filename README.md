@@ -7,7 +7,7 @@ This is a secured web application that allows a user to authenticate themselves 
 
 ## Usage (local, manually)
 
-Note: When running everything locally, we cannot use the full redirect flow (yet) that we'd get because the mock identity server does not currently have a login page.  If you'd like the flow with redirects, etc, configure Auth0 as an identity provider and make sure CORS and localhost are set up (see below).
+Note: When running everything locally, we cannot use the full redirect flow (yet) that we'd get because the mock identity server does not currently have a login page.  If you'd like the flow with redirects, etc, configure Auth0 as an identity provider and make sure CORS and localhost are set up (see the Auth0 section below).
 
 The following instructions show how to obtain the tokens manually and use them in the client.
 
