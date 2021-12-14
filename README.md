@@ -10,9 +10,9 @@ This is a secured web application that allows a user to authenticate themselves 
 When running locally, we cannot use the full redirect flow (yet) because the mock identity server does not currently have a login page.
 The following instructions show how to obtain the tokens manually and use them in the client.
 
-1. Check out `the-usher-server`, launch the developer configuration with `cd the-usher-server; docker-compose up`.
-1. Check out `the-usher-democlient`, serve it locally with `cd the-usher-democlient; python3 -m http.server`.
-1. Check out `the-usher-demoresource`, serve it locally with `cd the-usher-demoresource; PORT=9000 npm start`.
+1. Check out `the-usher-server`. Launch the developer configuration with `cd the-usher-server; docker-compose up`.
+1. Check out `the-usher-democlient`. Serve it locally with `cd the-usher-democlient; python3 -m http.server`.
+1. Check out `the-usher-demoresource`, Launch it locally with `cd the-usher-demoresource; PORT=9000 npm start`.
 1. Get an IDP token from the mock identity server
 
 ```
