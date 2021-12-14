@@ -5,9 +5,10 @@ This is a secured web application that allows a user to authenticate themselves 
 
 **User flow**: When you use this application you are first redirected to authenticate with credentials via an Auth0 tenant.  You then return to the application and can click a button to obtain authorization from TheUsher.  With this authorization in hand you can use the UI to perform arithmetic operations for which you are authorized.
 
-## Usage (local, manually without redirects)
+## Usage (local, manually)
 
-When running locally, we cannot use the full redirect flow (yet) because the mock identity server does not currently have a login page.
+Note: When running everything locally, we cannot use the full redirect flow (yet) that we'd get because the mock identity server does not currently have a login page.  If you'd like the flow with redirects, etc, configure Auth0 as an identity provider and make sure CORS and localhost are set up (see below).
+
 The following instructions show how to obtain the tokens manually and use them in the client.
 
 1. Check out `the-usher-server`. Launch the developer configuration with `cd the-usher-server; docker-compose up`.
@@ -41,13 +42,13 @@ You could optionally do any or all of the following:
 
 ## Configuring your own Auth0 Tenant
 
-Suppose you were going to deploy this application (client and resource server, respectively) to Glitch.  You could use Auth0 as an identity provider.
+You can use this application with Auth0 as an identity provider, even if running and developing locally.
 
 1. Set up a client Auth0 Application, e.g., called something like *TheUsher Client Application* with the following parameters:
 
 * Settings
   * Native Application
-  * Callbacks: https://my-theusher-client.glitch.me/ (or wherever you are hosting the app; could be http://localhost:8000)
+  * Callbacks: https://my-theusher-client.glitch.me/ (or wherever you are hosting the app; could be `http://localhost:8000`)
   * Web Origins: https://my-theusher-client.glitch.me ( """ )
   * CORS: https://my-theusher-client.glitch.me ( """ ; **NOTE: just the host domain, no URL paths**.)
 * Connections: Username-Password-Authentication / Database On.
