@@ -8,18 +8,18 @@ https://my-theusher-client.glitch.me/?code=eoCg73mPrP7LOsLt&state=aG1jdHFpTEFDOU
 
     <script>
       // Authentication service (Auth0) configuration
-      const AUTH0_DOMAIN = "dmgt-test.auth0.com";  // replace with your Auth0 tenant domain
+      const AUTH0_DOMAIN = "clientcompany.auth0.com";  // replace with your Auth0 tenant domain
       const AUTH0_CLIENT_ID = "nPoIVTfaaXJwqLqWVYG6AFRikXWCqeMX"; // replace with your client ID
-      const AUTH0_REDIRECT_URI = "https://my-theusher-client.glitch.me/"; // replace with the URI to this hosted app
+      const AUTH0_REDIRECT_URI = "http://localhost:8000"; // replace with the URI to this hosted app
 
       // Authorization service (TheUsher) configuration
       const THEUSHER_URL =
-        "https://o07e9wdidk.execute-api.us-east-1.amazonaws.com/prod";
+        "http://localhost:3001/";
       const THEUSHER_CLIENT_ID = "test-client1"
 
-      // Backend Resources to Use
+      // Backend Resources to Use (needs to include trailing slash)
       const BACKEND_RESOURCE_BASEURL =
-        "https://my-theusher-resourceserver.glitch.me/"; // replace with the URI to the hosted resource server
+       "http://localhost:9000/"
 
 
       // Internal client app configuration

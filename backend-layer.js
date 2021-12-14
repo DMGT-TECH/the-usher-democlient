@@ -5,15 +5,19 @@ async function callMathServiceResource(operationName) {
   const HEADERS = {
     "Content-Type": "application/json",
     Authorization: "Bearer " + Cookies.get(THEUSHER_TOKEN_COOKIE_NAME),
-    left: document.getElementById("left").value,
-    right: document.getElementById("right").value
   };
+
+  const REQUEST_BODY = {
+    left: parseFloat(document.getElementById("left").value),
+    right: parseFloat(document.getElementById("right").value)
+  }
 
   const RESPONSE = await fetch(
     BACKEND_RESOURCE_BASEURL + operationName,
     {
       method: "POST",
-      headers: HEADERS
+      headers: HEADERS,
+      body: JSON.stringify(REQUEST_BODY)
     }
   );
 

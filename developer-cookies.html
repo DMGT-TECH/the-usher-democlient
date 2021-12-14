@@ -1,0 +1,29 @@
+<html>
+  <head>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+  <script>
+    const IDP_TOKEN_COOKIE_NAME = "idp_token";
+    const THEUSHER_TOKEN_COOKIE_NAME = "theusher_token";
+
+    function setDeveloperCookies() {
+      Cookies.set(IDP_TOKEN_COOKIE_NAME, document.getElementById('idp_token_textarea').value);
+      Cookies.set(THEUSHER_TOKEN_COOKIE_NAME, document.getElementById('theusher_token_textarea').value);
+    }
+
+    function clearDeveloperCookies() {
+      Cookies.remove(IDP_TOKEN_COOKIE_NAME);
+      Cookies.remove(THEUSHER_TOKEN_COOKIE_NAME);
+    }
+
+  </script>
+  </head>
+
+  <form>
+    <table boder=1>
+      <tr><td>idp_token:</td><td> <textarea id=idp_token_textarea></textarea></td></tr>
+      <tr><td>theusher_token:</td><td> <textarea id=theusher_token_textarea></textarea></td></tr>
+      <tr><td colspan=2><input type=button name=SetCookies value="Set Token Cookies" onclick="javascript:setDeveloperCookies();"></td></tr>
+      <tr><td colspan=2><input type=button name=ClearCookies value="Clear Token Cookies" onclick="javascript:clearDeveloperCookies();"></td></tr>
+    </table>
+  </form>
+</html>
